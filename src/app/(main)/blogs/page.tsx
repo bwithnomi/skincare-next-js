@@ -10,9 +10,14 @@ import {
 } from "@/components/ui/card";
 import { formatDistanceToNow } from "date-fns";
 import { EyeIcon } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-
+export const metadata: Metadata = {
+  title: "GulSkincare - Blogs",
+  description:
+    "Board-certified dermatology care for acne, aging, pigmentation, hair loss and more.",
+};
 const UserBlogs = async () => {
   const blogs = await fetchBlogs();
   return (

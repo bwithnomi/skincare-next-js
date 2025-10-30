@@ -5,6 +5,7 @@ import { signInSchema } from "@/lib/validators/auth";
 import { signJwt, verifyPassword } from "@/lib/auth";
 import { db } from "@/db";
 import { cookies } from "next/headers";
+import { error } from "console";
 
 type FormDataLike = {
   get: (k: string) => FormDataEntryValue | null;
@@ -38,7 +39,7 @@ export async function signInAction(formData: FormDataLike) {
 
     if (!existing) {
       // throw an error that you can catch in the client or use redirect with message
-      throw new Error("User not found");
+      return { ok: false, data: null, errors: "Invalid email or password" };
     }
 
     // Hash password
@@ -77,8 +78,6 @@ export async function signInAction(formData: FormDataLike) {
     // Return something to the client (server action resolves to this)
     return { ok: true, user: { ...user, password: undefined } };
   } catch (err) {
-    console.log(err);
-
     throw err;
   }
 }

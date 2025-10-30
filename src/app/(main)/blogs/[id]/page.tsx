@@ -1,9 +1,14 @@
 import { fetchBlogById } from "@/actions/blogs";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-
+export const metadata: Metadata = {
+  title: "GulSkincare - Blogs",
+  description:
+    "Board-certified dermatology care for acne, aging, pigmentation, hair loss and more.",
+};
 const BlogViewUser = async ({ params }: { params: { id: number } }) => {
   const blog = await fetchBlogById(params.id);
 

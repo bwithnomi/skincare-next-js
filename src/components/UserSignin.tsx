@@ -71,7 +71,7 @@ const UserSignin = ({ button_text = "Login", icon = true }: SignInProps) => {
           );
           setOpen(false);
         } else {
-          toast.error("Login failed");
+          toast.error(result.errors || "Login failed");
         }
       } catch (err: any) {
         // show nice message

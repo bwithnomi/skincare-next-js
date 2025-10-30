@@ -1,8 +1,19 @@
-import { Button } from "@/components/ui/button";
+import BookNow from "@/components/BookNow";
+import UserSignin from "@/components/UserSignin";
+import { getUserFromToken } from "@/lib/clientAuth";
+import { Metadata } from "next";
+import { cookies } from "next/headers";
 import Image from "next/image";
 import React from "react";
-
-const About = () => {
+export const metadata: Metadata = {
+  title: "GulSkincare - About us",
+  description:
+    "Board-certified dermatology care for acne, aging, pigmentation, hair loss and more.",
+};
+const About = async () => {
+  const cookieStore = await cookies();
+  const session = cookieStore.get("session")?.value;
+  const user = getUserFromToken(session);
   return (
     <>
       <section className="bg-gray-50">
@@ -12,9 +23,11 @@ const About = () => {
               We believe the health of your skin shouldn't have to wait
             </p>
             <div className="mt-4 flex gap-4 items-center justify-center md:justify-start">
-              <Button className="bg-emerald-900 cursor-pointer hover:bg-transparent border-2 border-emerald-900 hover:text-emerald-900 text-white font-bold">
-                <span>Book Now</span>
-              </Button>
+              {user ? (
+                <BookNow />
+              ) : (
+                <UserSignin icon={false} button_text="Book Now" />
+              )}
             </div>
           </div>
           <div className="hidden md:block">

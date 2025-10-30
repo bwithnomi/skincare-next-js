@@ -1,11 +1,8 @@
 import BookNow from "@/components/BookNow";
 import UserSignin from "@/components/UserSignin";
 import { getUserFromToken } from "@/lib/clientAuth";
-import {
-  MessageCircleMore,
-  StickyNote,
-  UserCircle,
-} from "lucide-react";
+import { MessageCircleMore, StickyNote, UserCircle } from "lucide-react";
+import { Metadata } from "next";
 import { cookies } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
@@ -61,6 +58,12 @@ const treatments = [
   },
 ];
 
+export const metadata: Metadata = {
+  title: "GulSkincare - Home",
+  description:
+    "Board-certified dermatology care for acne, aging, pigmentation, hair loss and more.",
+};
+
 export default async function Home() {
   const cookieStore = await cookies();
   const session = cookieStore.get("session")?.value;
@@ -89,7 +92,7 @@ export default async function Home() {
               ) : (
                 <UserSignin icon={false} button_text="Book Now" />
               )}
-              <Link href="" className="hover:underline font-bold">
+              <Link href="/services" className="hover:underline font-bold">
                 <span>Explore Services</span>
               </Link>
             </div>

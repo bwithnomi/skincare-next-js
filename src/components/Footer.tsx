@@ -18,7 +18,9 @@ const Footer = async () => {
       <div className="md:px-8 px-4 py-12 flex md:flex-row flex-row flex-wrap gap-y-8 md:gap-y-0">
         <div className="md:basis-1/3 basis-1/2 md:mr-0 mr-8">
           <div className="nav-brand">
-            <Image src="./next.svg" alt="logo" width={140} height={80} />
+            {/* <Image src="./next.svg" alt="logo" width={140} height={80} /> */}
+
+            <p className="font-bold md:text-3xl text-2xl">GulSkincare</p>
           </div>
           <p className="text-sm mt-2">Accessible. Affordable. Quality.</p>
           <p className="flex gap-2 text-sm mt-8 items-center">

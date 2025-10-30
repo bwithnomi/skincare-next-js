@@ -43,7 +43,7 @@ export async function adminSignInAction(formData: FormDataLike) {
 
     if (!existing) {
       // throw an error that you can catch in the client or use redirect with message
-      throw new Error("Unauthorized user");
+      return { ok: true, data: null, errors: "Invalid email or password" };
     }
 
     // Hash password
@@ -53,7 +53,7 @@ export async function adminSignInAction(formData: FormDataLike) {
     );
 
     if (!result) {
-      throw new Error("Unauthorized user");
+      return { ok: true, data: null, errors: "Unauthorized user" };
     }
 
     const user = existing;

@@ -1,10 +1,24 @@
 import { fetchServices } from "@/actions/services";
+import BookNow from "@/components/BookNow";
+import UserSignin from "@/components/UserSignin";
+import { getUserFromToken } from "@/lib/clientAuth";
 import { ArrowBigRight } from "lucide-react";
+import { Metadata } from "next";
+import { cookies } from "next/headers";
 import Image from "next/image";
 import React from "react";
 
+
+export const metadata: Metadata = {
+  title: "GulSkincare - Services",
+  description:
+    "Board-certified dermatology care for acne, aging, pigmentation, hair loss and more.",
+};
 const Services = async () => {
   const services = await fetchServices();
+  const cookieStore = await cookies();
+  const session = cookieStore.get("session")?.value;
+  const user = getUserFromToken(session);
   return (
     <>
       <section className="bg-gray-50">
@@ -17,6 +31,13 @@ const Services = async () => {
               Our consultant dermatologist are experts in diagnosing and
               treating skin, hair, nail, lip, and mouth conditions.
             </p>
+            <div className="mt-4 flex gap-4 items-center justify-center md:justify-start">
+              {user ? (
+                <BookNow />
+              ) : (
+                <UserSignin icon={false} button_text="Book Now" />
+              )}
+            </div>
           </div>
           <div className="hidden md:block">
             <Image src="/services.svg" alt="hero" width={500} height={500} />

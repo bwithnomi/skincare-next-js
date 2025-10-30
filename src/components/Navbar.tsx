@@ -12,6 +12,7 @@ import {
   SheetTrigger,
 } from "./ui/sheet";
 import NavAuth from "./NavAuth";
+import NavLinks from "./NavLinks";
 
 const navItems = [
   {
@@ -48,16 +49,13 @@ const Navbar = () => {
           {/* <Image src="./next.svg" alt="logo" width={80} height={80} /> */}
           <p className="font-bold text-lg">GulSkincare</p>
         </div>
-        <ul className="lg:flex gap-10 hidden">
+        <ul className="lg:flex items-center gap-10 hidden">
           {navItems.map((item, index) => (
-            <li
+            <NavLinks
               key={`${item.label}-${index}`}
-              className=" font-sora text-emerald-800 hover:underline cursor-pointer underline-offset-2 font-bold duration-1000"
-            >
-              <Link href={item.href}>
-                <span>{item.label}</span>
-              </Link>
-            </li>
+              label={item.label}
+              href={item.href}
+            />
           ))}
         </ul>
         <div className="hidden lg:flex gap-2">
@@ -82,14 +80,11 @@ const Navbar = () => {
 
             <ul className="flex flex-col gap-4 px-4">
               {navItems.map((item, index) => (
-                <li
+                <NavLinks
                   key={`${item.label}-${index}`}
-                  className=" font-sora text-emerald-800 hover:underline cursor-pointer underline-offset-2 font-bold duration-1000"
-                >
-                  <Link href={item.href}>
-                    <span>{item.label}</span>
-                  </Link>
-                </li>
+                  label={item.label}
+                  href={item.href}
+                />
               ))}
             </ul>
             <SheetFooter>

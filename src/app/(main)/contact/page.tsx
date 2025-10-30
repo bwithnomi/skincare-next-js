@@ -1,7 +1,13 @@
 import { Instagram, Mail, PhoneCall } from "lucide-react";
+import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 
+export const metadata: Metadata = {
+  title: "GulSkincare - Contact us",
+  description:
+    "Board-certified dermatology care for acne, aging, pigmentation, hair loss and more.",
+};
 const Contact = () => {
   return (
     <>
