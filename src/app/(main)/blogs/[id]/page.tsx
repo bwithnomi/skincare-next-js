@@ -1,5 +1,6 @@
 import { fetchBlogById } from "@/actions/blogs";
 import { Button } from "@/components/ui/button";
+import { formatDistanceToNow } from "date-fns";
 import { ArrowLeft } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -21,9 +22,12 @@ const BlogViewUser = async ({ params }: { params: { id: number } }) => {
         <div className="">
           <p className="text-2xl font-bold">{blog.title}</p>
           <p className="text-sm">
-            Author: {blog.author} |{" "}
+            <strong>Author:</strong> {blog.author} |{" "}
             <span className="text-gray-500">
-              Published at: {String(blog.createdAt)}
+              <strong>Published at:</strong>{" "}
+              {formatDistanceToNow(new Date(blog.createdAt), {
+                addSuffix: true,
+              })}
             </span>
           </p>
         </div>
