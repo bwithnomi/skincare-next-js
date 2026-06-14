@@ -135,7 +135,7 @@ export default async function Home() {
               Meet our team
             </p>
             <p className=" text-center md:text-left">
-              Our team of UK Dermatology Consultants is dedicated to providing
+              Our team of Pakistani Dermatology Consultants is dedicated to providing
               high-quality, patient-centred care. With years of clinical
               experience, our professionals are equipped to assess a broad range
               of skin concerns and help you feel more confident in your skin.
@@ -177,7 +177,7 @@ export default async function Home() {
             <StickyNote size={50} color="orange" />
             <div className="">
               <p className="font-bold text-lg">
-                Treatment delivered anywhere in the UK
+                Treatment delivered anywhere in Pakistan
               </p>
             </div>
           </div>

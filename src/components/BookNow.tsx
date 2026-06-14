@@ -455,13 +455,13 @@ const BookNow = () => {
                 <li>1. Send your payment on the Account below.</li>
                 <li>Account Details:</li>
                 <ul className="list-disc list-inside">
-                  <li>Account Name: GulSkincare</li>
-                  <li>Account Number: 1234567890</li>
-                  <li>Bank: ABC Bank</li>
-                  <li>Routing Number: 987654321</li>
+                  <li>Account Name: Mian Shahid Gul</li>
+                  <li>Account Number: 11377900461603</li>
+                  <li>Bank: HBL</li>
+                  <li>Amount: Rs. 2000</li>
                 </ul>
                 <li>
-                  2. Send payment screenshot at this whatsapp number: +92 334 9240257
+                  2. Send payment screenshot at this whatsapp number: +92 346 4280801
                 </li>
                 <li>
                   3. if payment is not received inside 30 mins appointment will

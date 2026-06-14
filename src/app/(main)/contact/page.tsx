@@ -82,26 +82,19 @@ const Contact = () => {
           Emergencies
         </p>
         <p className="mb-4 mt-2">
-          skindoc. is not an online emergency service but we can offer medical
-          advice if related to services you have obtained from us. This includes
-          suspected drug allergies, worsening of your condition or feeling
-          unwell since starting treatment, unexpected side effects etc.
+        gulskincare. is not an online emergency medical service, but we can offer medical guidance if it is directly related to the treatments or services you have obtained from us. This includes suspected drug allergies, a worsening of your skin condition, feeling unwell since starting your treatment, or experiencing unexpected side effects.
         </p>
         <p className="mb-4 mt-2">
-          Please contact us and we will arrange for a doctor to contact you as
-          soon as possible.
+        Please contact us immediately, and we will arrange for a doctor to get in touch with you as soon as possible.
         </p>
         <p className="mb-4 mt-2">
-          If our contact centre is closed, and you urgently need medical advice
-          but it's not a life-threatening situation, contact the NHS advice
-          line, by calling 1122.
+        Non-Life-Threatening Urgencies: If our contact center is closed and you urgently need medical advice for a non-life-threatening situation, please visit your nearest hospital's outpatient department (OPD), contact your local family physician, or call a reputable local health helpline.
         </p>
         <p className="mb-4 mt-2 font-bold">
           Call 1122 in an emergency or life-threatening situation.
         </p>
         <p>
-          You can also find a list of NHS urgent care services by visiting the
-          NHS website.
+        Life-Threatening Emergencies: In case of a severe medical emergency or a life-threatening situation, please immediately call 1122 (Rescue 1122) or 15, or proceed directly to the emergency room (ER) of your nearest major hospital.
         </p>
       </section>
     </>

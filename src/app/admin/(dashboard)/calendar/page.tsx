@@ -7,7 +7,7 @@ import {
 } from "@/actions/appointment";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
-import { Appointment, AppointmentStatus } from "@/db/schema";
+import { AppointmentStatus } from "@/db/schema";
 import clsx from "clsx";
 import React, { useEffect, useState, useTransition } from "react";
 import { toast } from "sonner";
@@ -16,7 +16,9 @@ const AppointmentCalendar = () => {
   const [date, setDate] = useState<Date>(new Date());
   const [fetching, startFetching] = useTransition();
   const [updating, startUpdating] = useTransition();
-  const [appointments, setAppointments] = useState<Appointment[]>([]);
+  const [appointments, setAppointments] = useState<
+    Awaited<ReturnType<typeof fetchAppointmentByDate>>
+  >([]);
 
   const confirmPayment = async (id: number) => {
     // For demonstration, using a fixed appointment ID
@@ -97,6 +99,18 @@ const AppointmentCalendar = () => {
                     <p>
                       <span className="font-semibold">Patient:</span>{" "}
                       {appointment.patient}
+                    </p>
+                    <p>
+                      <span className="font-semibold">Email:</span>{" "}
+                      {appointment.email}
+                    </p>
+                    <p>
+                      <span className="font-semibold">Phone:</span>{" "}
+                      {appointment.user?.phone || "—"}
+                    </p>
+                    <p>
+                      <span className="font-semibold">WhatsApp:</span>{" "}
+                      {appointment.user?.whatsapp || "—"}
                     </p>
                     <p>
                       <span className="font-semibold">Issue:</span>{" "}

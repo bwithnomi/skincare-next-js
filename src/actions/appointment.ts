@@ -36,14 +36,22 @@ export const fetchPendingAppointmentByDate = async (date: string) => {
 };
 
 export const fetchAppointmentByDate = async (date: string) => {
-  const blog = await db.query.appointments.findMany({
+  const appointmentsData = await db.query.appointments.findMany({
     where: (appointments, { eq }) => {
       return eq(appointments.checkup_date, date);
     },
     orderBy: asc(appointments.checkup_slot),
+    with: {
+      user: {
+        columns: {
+          phone: true,
+          whatsapp: true,
+        },
+      },
+    },
   });
 
-  return blog;
+  return appointmentsData;
 };
 
 export const createAppointment = async (appointment: NewAppointment) => {

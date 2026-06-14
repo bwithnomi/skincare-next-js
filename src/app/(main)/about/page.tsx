@@ -43,7 +43,7 @@ const About = async () => {
           Our Purpose
         </p>
         <p>
-          skindoc’s purpose is to bring rapid, convenient, and quality skin care
+        gulskincare’s purpose is to bring rapid, convenient, and quality skin care
           to every home in the nation.
         </p>
         <ul className="list-disc list-inside mt-4">
@@ -57,7 +57,7 @@ const About = async () => {
             that is familiar and comfortable without the need to travel.
           </li>
           <li>
-            We bring you the best, by the best – top quality UK Dermatologists
+            We bring you the best, by the best – top quality Pakistani Dermatologists
             that know the optimum ways to get you the care you want.
           </li>
         </ul>
