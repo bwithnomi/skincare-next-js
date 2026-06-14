@@ -73,7 +73,7 @@ const Contact = () => {
           <p className="font-bold">
             We are also closed on bank holidays and bank holiday weekends.
           </p>
-          <p>Want to write to us? Get us at: GulSkincare. @ Gul Plaza Dagari Malakand Kpk Pakistan</p>
+          <p>Want to write to us? Get us at: GulSkincare. @ Gul Plaza Dargai Malakand Kpk Pakistan</p>
         </div>
       </section>
       <section className="md:py-20 py-10 px-4 md:px-40 bg-gray-50">
