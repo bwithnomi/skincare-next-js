@@ -68,8 +68,7 @@ const Contact = () => {
           <p>Opening Hours:</p>
           <ul className="list-disc list-inside">
             <li>Monday - Friday: 09:00 - 17:00</li>
-            <li>Saturday: 09:00 - 13:00</li>
-            <li>Sunday: Closed</li>
+            <li>Saturday & Sunday: 09:00 - 13:00</li>
           </ul>
           <p className="font-bold">
             We are also closed on bank holidays and bank holiday weekends.
