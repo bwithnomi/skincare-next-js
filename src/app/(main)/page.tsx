@@ -74,7 +74,7 @@ export default async function Home() {
       <section id="hero-section" className="">
         <div className=" py-4 bg-emerald-100">
           <p className="text-center font-sora md:text-lg text-xs">
-            If you need help, you can call us on +92 334 9240257.
+            If you need help, you can call us on +92 346 4280801.
           </p>
         </div>
         <div className="flex flex-col md:flex-row md:px-40 md:py-20 py-10 px-8 gap-12 md:gap-0 justify-between items-center">

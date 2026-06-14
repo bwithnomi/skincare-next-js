@@ -117,6 +117,12 @@ const AppointmentCalendar = () => {
                       {appointment.issue}
                     </p>
                     <p>
+                      <span className="font-semibold">Consultation Type:</span>{" "}
+                      <span className="capitalize">
+                        {appointment.consultation_type.replace(/_/g, " ")}
+                      </span>
+                    </p>
+                    <p>
                       <span className="font-semibold">Checkup Slot:</span>{" "}
                       {appointment.checkup_slot}
                     </p>

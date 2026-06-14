@@ -311,7 +311,7 @@ const BookNow = () => {
               </Select>
             </div>
             <div className="space-y-2">
-              <p>What issue can skindoc help you solve?</p>
+              <p>What issue can Gulskincare help you solve?</p>
               {errors.issue && (
                 <p className="text-sm text-red-500">{errors.issue}</p>
               )}

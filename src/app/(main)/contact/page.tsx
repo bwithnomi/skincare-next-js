@@ -49,7 +49,7 @@ const Contact = () => {
           <div className="flex md:basis-[300px]  w-[300px] gap-2  md:justify-center justify-start lg:justify-start items-center">
             <PhoneCall size={40} color="teal" className="hidden  md:block" />
             <PhoneCall size={30} color="teal" className="md:hidden" />
-            <span className="font-bold text-lg">+92 334 9240257</span>
+            <span className="font-bold text-lg">+92 346 4280801</span>
           </div>
           <div className="flex md:basis-[300px]  w-[300px] gap-2  md:justify-center justify-start lg:justify-start items-center">
             <Facebook size={40} color="teal" className="hidden  md:block" />
