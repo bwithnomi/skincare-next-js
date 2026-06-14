@@ -1,4 +1,4 @@
-import { Instagram, Mail, PhoneCall } from "lucide-react";
+import { Facebook, Instagram, Mail, PhoneCall } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
@@ -34,24 +34,33 @@ const Contact = () => {
         </div>
       </section>
       <section className="lg:py-20 py-10 px-4 lg:px-8">
-        <div className="flex flex-wrap md:flex-row flex-col justify-center items-center lg:gap-y-0 md:gap-y-6 gap-y-4">
-          <div className="flex md:basis-[300px] w-[300px] gap-2 md:justify-center justify-start lg:justify-start">
+        <div className="flex flex-wrap md:flex-row flex-col justify-center items-center gap-x-4 lg:gap-y-0 md:gap-y-6 gap-y-4">
+          <div className="flex md:basis-[300px] w-[300px] gap-2 md:justify-center justify-start lg:justify-start items-center">
+            <a href="https://www.tiktok.com/@03349240257_03464280801?_r=1&_t=ZS-97CM1SmKq4j" target="_blank" className="hidden md:block">
+              <Image src="/tikton.png" alt="instagram" width={40} height={30} />
+            </a>
+            <a href="https://www.tiktok.com/@03349240257_03464280801?_r=1&_t=ZS-97CM1SmKq4j" target="_blank" className="block md:hidden">
+              <Image src="/tikton.png" alt="instagram" width={40} height={30} />
+            </a>
+            <a className="" href="https://www.tiktok.com/@03349240257_03464280801?_r=1&_t=ZS-97CM1SmKq4j" target="_blank">
+              <p className="font-bold text-lg">Dr. Mian Shahid Gul</p>
+            </a>
+          </div>
+          <div className="flex md:basis-[300px]  w-[300px] gap-2  md:justify-center justify-start lg:justify-start items-center">
+            <PhoneCall size={40} color="teal" className="hidden  md:block" />
+            <PhoneCall size={30} color="teal" className="md:hidden" />
+            <span className="font-bold text-lg">+92 334 9240257</span>
+          </div>
+          <div className="flex md:basis-[300px]  w-[300px] gap-2  md:justify-center justify-start lg:justify-start items-center">
+            <Facebook size={40} color="teal" className="hidden  md:block" />
+            <Facebook size={30} color="teal" className="md:hidden" />
+            <a href="https://www.facebook.com/share/18yD92AbEP/?mibextid=wwXIfr" target="_blank" className="font-bold text-lg">Dr. Mian Shahid Gul</a>
+          </div>
+          <div className="flex md:basis-[300px]  w-[300px] gap-2  md:justify-center justify-start lg:justify-start items-center">
             <Mail size={50} color="indigo" className="hidden  md:block" />
             <Mail size={30} color="indigo" className="md:hidden" />
             <div className="">
-              <p className="font-bold text-lg">Email Here</p>
-            </div>
-          </div>
-          <div className="flex md:basis-[300px]  w-[300px] gap-2  md:justify-center justify-start lg:justify-start">
-            <PhoneCall size={50} color="teal" className="hidden  md:block" />
-            <PhoneCall size={30} color="teal" className="md:hidden" />
-            <span className="font-bold text-lg">Number here</span>
-          </div>
-          <div className="flex md:basis-[300px]  w-[300px] gap-2  md:justify-center justify-start lg:justify-start">
-            <Instagram size={50} color="orange" className="hidden  md:block" />
-            <Instagram size={30} color="orange" className="  md:hidden" />
-            <div className="">
-              <p className="font-bold text-lg">Insta Handle here</p>
+              <p className="font-bold text-lg">mianshahidgul@gmail.com</p>
             </div>
           </div>
         </div>
@@ -65,7 +74,7 @@ const Contact = () => {
           <p className="font-bold">
             We are also closed on bank holidays and bank holiday weekends.
           </p>
-          <p>Want to write to us? Get us at: Business Name. @ Address Here</p>
+          <p>Want to write to us? Get us at: GulSkincare. @ Gul Plaza Dagari Malakand Kpk Pakistan</p>
         </div>
       </section>
       <section className="md:py-20 py-10 px-4 md:px-40 bg-gray-50">
@@ -85,10 +94,10 @@ const Contact = () => {
         <p className="mb-4 mt-2">
           If our contact centre is closed, and you urgently need medical advice
           but it's not a life-threatening situation, contact the NHS advice
-          line, by calling 111.
+          line, by calling 1122.
         </p>
         <p className="mb-4 mt-2 font-bold">
-          Call 999 in an emergency or life-threatening situation.
+          Call 1122 in an emergency or life-threatening situation.
         </p>
         <p>
           You can also find a list of NHS urgent care services by visiting the

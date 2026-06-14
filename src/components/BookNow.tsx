@@ -455,14 +455,13 @@ const BookNow = () => {
                 <li>1. Send your payment on the Account below.</li>
                 <li>Account Details:</li>
                 <ul className="list-disc list-inside">
-                  <li>Account Name: DermaDoc</li>
+                  <li>Account Name: GulSkincare</li>
                   <li>Account Number: 1234567890</li>
                   <li>Bank: ABC Bank</li>
                   <li>Routing Number: 987654321</li>
                 </ul>
                 <li>
-                  2. Send payment screenshot at this whatsapp number: +1 234 567
-                  3456
+                  2. Send payment screenshot at this whatsapp number: +92 334 9240257
                 </li>
                 <li>
                   3. if payment is not received inside 30 mins appointment will

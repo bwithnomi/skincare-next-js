@@ -74,7 +74,7 @@ export default async function Home() {
       <section id="hero-section" className="">
         <div className=" py-4 bg-emerald-100">
           <p className="text-center font-sora md:text-lg text-xs">
-            If you need help, you can call us on 020 7871 0074.
+            If you need help, you can call us on +92 334 9240257.
           </p>
         </div>
         <div className="flex flex-col md:flex-row md:px-40 md:py-20 py-10 px-8 gap-12 md:gap-0 justify-between items-center">
@@ -97,11 +97,11 @@ export default async function Home() {
               </Link>
             </div>
           </div>
-          <div className="hidden md:block">
-            <Image src="/doctor.svg" alt="hero" width={500} height={500} />
+          <div className="hidden md:block rounded-full overflow-hidden">
+            <Image src="/owner.png" alt="hero" width={500} height={500} />
           </div>
           <div className="md:hidden block">
-            <Image src="/doctor.svg" alt="hero" width={300} height={500} />
+            <Image src="/owner.png" alt="hero" width={300} height={500} />
           </div>
         </div>
       </section>
