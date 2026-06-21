@@ -94,8 +94,8 @@ const AppointmentCalendar = () => {
           ) : (
             <div className="space-y-4">
               {appointments.map((appointment) => (
-                <div className="flex w-full justify-between border p-4 rounded-lg shadow-sm">
-                  <div key={appointment.id} className="">
+                <div className="flex w-full justify-between border p-4 rounded-lg shadow-sm" key={appointment.id}>
+                  <div className="">
                     <p>
                       <span className="font-semibold">Patient:</span>{" "}
                       {appointment.patient}

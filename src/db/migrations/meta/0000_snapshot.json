@@ -421,7 +421,7 @@
         },
         "weekly_schedule": {
           "name": "weekly_schedule",
-          "type": "json",
+          "type": "text",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
@@ -490,7 +490,7 @@
         },
         "sub_categories": {
           "name": "sub_categories",
-          "type": "json",
+          "type": "text",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false

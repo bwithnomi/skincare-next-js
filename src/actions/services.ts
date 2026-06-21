@@ -1,18 +1,24 @@
 "use server";
 
 import { db } from "@/db";
-import { NewService, services } from "@/db/schema";
+import { NewService, Service, services } from "@/db/schema";
 import { getUserFromToken } from "@/lib/clientAuth";
+import { parseJsonColumn, serializeJsonColumn } from "@/lib/jsonColumns";
 import { serviceSchema } from "@/lib/validators/service";
 import { desc, eq } from "drizzle-orm";
 import { cookies } from "next/headers";
+
+const toService = (row: typeof services.$inferSelect): Service => ({
+  ...row,
+  sub_categories: parseJsonColumn(row.sub_categories, []),
+});
 
 export const fetchServices = async () => {
   const allServices = await db.query.services.findMany({
     orderBy: desc(services.createdAt),
   });
 
-  return allServices;
+  return allServices.map(toService);
 };
 
 export const fetchBlogById = async (id: number) => {
@@ -43,11 +49,12 @@ export const createNewService = async (data: NewService) => {
     });
     return { ok: false, errors: errorMessage };
   }
+
   const [{ id }] = await db
     .insert(services)
     .values({
       title: parsed.data.title,
-      sub_categories: parsed.data.sub_categories,
+      sub_categories: serializeJsonColumn(parsed.data.sub_categories),
     })
     .$returningId();
 
@@ -55,7 +62,7 @@ export const createNewService = async (data: NewService) => {
     where: eq(services.id, id),
   });
 
-  return { ok: true, data: service ? [service] : [] };
+  return { ok: true, data: service ? [toService(service)] : [] };
 };
 
 export const deleteServiceById = async (id: number) => {

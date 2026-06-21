@@ -1,17 +1,16 @@
-import { int, json, mysqlTable, timestamp } from "drizzle-orm/mysql-core";
+import { int, mysqlTable, text, timestamp } from "drizzle-orm/mysql-core";
 
-// TypeScript types for type safety
 export type BreakTime = {
-  startTime: string; // "13:30"
-  endTime: string; // "14:30"
+  startTime: string;
+  endTime: string;
 };
 
 export type DaySchedule = {
-  startTime: string; // "09:00"
-  endTime: string; // "17:00"
-  slotDuration: number; // in minutes (e.g., 30)
-  breaks?: BreakTime[]; // Optional break times during the day
-} | null; // null means day off
+  startTime: string;
+  endTime: string;
+  slotDuration: number;
+  breaks?: BreakTime[];
+} | null;
 
 export type WeeklySchedule = {
   monday: DaySchedule;
@@ -23,14 +22,24 @@ export type WeeklySchedule = {
   sunday: DaySchedule;
 };
 
-// Database schema
 export const doctorSchedules = mysqlTable("doctor_schedules", {
   id: int().autoincrement().primaryKey(),
-  weeklySchedule: json("weekly_schedule").$type<WeeklySchedule>().notNull(),
+  weeklySchedule: text("weekly_schedule").notNull(),
   effectiveFrom: timestamp("effective_from").notNull().defaultNow(),
-  effectiveUntil: timestamp("effective_until"), // null means current schedule
+  effectiveUntil: timestamp("effective_until"),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
 });
-export type DoctorSchedule = typeof doctorSchedules.$inferSelect;
-export type NewDoctorSchedule = typeof doctorSchedules.$inferInsert;
+
+type DoctorScheduleRow = typeof doctorSchedules.$inferSelect;
+type NewDoctorScheduleRow = typeof doctorSchedules.$inferInsert;
+
+export type DoctorSchedule = Omit<DoctorScheduleRow, "weeklySchedule"> & {
+  weeklySchedule: WeeklySchedule;
+};
+export type NewDoctorSchedule = Omit<
+  NewDoctorScheduleRow,
+  "weeklySchedule"
+> & {
+  weeklySchedule: WeeklySchedule;
+};

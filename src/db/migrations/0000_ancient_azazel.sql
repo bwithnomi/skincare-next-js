@@ -61,7 +61,7 @@ CREATE TABLE `users` (
 --> statement-breakpoint
 CREATE TABLE `doctor_schedules` (
 	`id` int AUTO_INCREMENT NOT NULL,
-	`weekly_schedule` json NOT NULL,
+	`weekly_schedule` text NOT NULL,
 	`effective_from` timestamp NOT NULL DEFAULT (now()),
 	`effective_until` timestamp,
 	`created_at` timestamp NOT NULL DEFAULT (now()),
@@ -72,7 +72,7 @@ CREATE TABLE `doctor_schedules` (
 CREATE TABLE `services` (
 	`id` int AUTO_INCREMENT NOT NULL,
 	`title` varchar(255) NOT NULL,
-	`sub_categories` json NOT NULL,
+	`sub_categories` text NOT NULL,
 	`status` varchar(50) NOT NULL DEFAULT 'active',
 	`link` varchar(255) DEFAULT '#',
 	`created_at` timestamp NOT NULL DEFAULT (now()),
