@@ -11,49 +11,49 @@ const treatments = [
   {
     name: "Acne & spots",
     description:
-      "inc. rosacea, infected hair follicles, cysts, sores and boils",
+      "Expert management of acne, rosacea, infected hair follicles, cysts, and painful sores or boils",
     image: "/services/acne.webp",
   },
   {
     name: "Skin rashes",
     description:
-      "inc. eczema, psoriasis, allergy, hives, blisters and infection",
+      "Targeted treatment for eczema, psoriasis, skin allergies, hives, blisters, and acute infections.",
     image: "/services/rashes.webp",
   },
   {
     name: "Skin changes",
-    description: "inc. colour loss, darkening, swelling and thickening",
+    description: "Diagnostic assessment for shifts in pigmentation (color loss or darkening), localized swelling, and skin thickening",
     image: "/services/changes.webp",
   },
   {
     name: "Nail problems",
-    description: "inc. infections, new colours and unexplained changes",
+    description: "Medical assessment of nail infections, discoloration, and unexplained changes in texture or growth.",
     image: "/services/nails.webp",
   },
   {
     name: "Moles & Growths",
-    description: "inc. lumps, bumps and lesions",
+    description: "Evaluation and safe management of moles, unexplained lumps, bumps, and various skin lesions",
     image: "/services/moles.webp",
   },
   {
-    name: "Hair problems",
-    description: "inc. hair loss, excessive growth and changes to your hair",
+    name: "Hair disorders",
+    description: "Comprehensive care for hair loss, thinning, excessive growth, and structural changes to your hair",
     image: "/services/hair.webp",
   },
   {
     name: "Mouth & Lips",
-    description: "inc. new lumps and changes to your inside cheek or gums",
+    description: "Evaluation of lesions, new lumps, or structural changes affecting your lips, inside cheeks, or gums.",
     image: "/services/lips.webp",
   },
   {
-    name: "No rash to see",
-    description: "inc. itching, altered sensations and excessive sweating",
+    name: "Atypical Symptoms (No Rash)",
+    description: "Advanced care for persistent itching, altered skin sensations, and excessive sweating.",
     image: "/services/body.webp",
   },
   {
-    name: "I don’t know",
+    name: "Undiagnosed Concerns",
     description:
-      "inc. skin problems you cannot explain but you feel something might be wrong",
+      "Specialized diagnostic consultations for unique or unexplained skin problems when you feel something is wrong but aren't sure what it is.",
     image: "/services/idk.webp",
   },
 ];
@@ -116,7 +116,7 @@ export default async function Home() {
         <div className="flex md:flex-row flex-col flex-wrap gap-y-12 mt-8 lg:px-40 w-full justify-center">
           {treatments.map((treatment, index) => (
             <div
-              className="flex gap-3 lg:basis-1/3 md:basis-1/2 basis-full"
+              className="flex gap-3 lg:basis-1/3 md:basis-1/2 basis-full items-center"
               key={`${treatment.name}-${index}`}
             >
               <Image src={treatment.image} alt="acne" width={80} height={400} />

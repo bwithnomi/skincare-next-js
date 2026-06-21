@@ -47,15 +47,20 @@ export const createNewBlog = async (data: {
     });
     return { ok: false, errors: errorMessage };
   }
-  const blog = await db
+  const [{ id }] = await db
     .insert(blogs)
     .values({
       title: parsed.data.title,
       author: parsed.data.author,
       content: parsed.data.content,
     })
-    .returning();
-  return { ok: true, data: blog };
+    .$returningId();
+
+  const blog = await db.query.blogs.findFirst({
+    where: eq(blogs.id, id),
+  });
+
+  return { ok: true, data: blog ? [blog] : [] };
 };
 
 export const deleteBlogById = async (id: number) => {

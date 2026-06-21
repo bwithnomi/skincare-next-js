@@ -63,15 +63,20 @@ export const createAppointment = async (appointment: NewAppointment) => {
     return { ok: false, errors: "Unauthorized" };
   }
 
-  const appointmentData = await db
+  const [{ id }] = await db
     .insert(appointments)
     .values({
       ...appointment,
       createdAt: new Date(),
       updatedAt: new Date(),
     })
-    .returning();
-  return { ok: true, data: appointmentData };
+    .$returningId();
+
+  const appointmentData = await db.query.appointments.findFirst({
+    where: eq(appointments.id, id),
+  });
+
+  return { ok: true, data: appointmentData ? [appointmentData] : [] };
 };
 
 export const confirmAppointmentPaymentStatus = async (id: number) => {

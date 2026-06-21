@@ -28,8 +28,7 @@ const Services = async () => {
               What we treat
             </p>
             <p className=" text-center md:text-left">
-              Our consultant dermatologist are experts in diagnosing and
-              treating skin, hair, nail, lip, and mouth conditions.
+            GulSkincare offers comprehensive, evidence-based dermatological care ranging from medical treatments to advanced non-surgical aesthetics. Our clinical services prioritize skin health by effectively diagnosing and managing chronic, inflammatory, and infectious conditions—such as acne, hormonal breakouts, eczema, psoriasis, and rosacea—as well as providing gentle, specialized care for infant rashes. Complementing our medical expertise, we utilize high-performance aesthetic therapies, including advanced laser skin resurfacing, microneedling, and PDRN biostimulation, to target signs of aging, promote natural cellular repair, and restore optimal skin texture and confidence.
             </p>
             <div className="mt-4 flex gap-4 items-center justify-center md:justify-start">
               {user ? (

@@ -47,7 +47,7 @@ export const createNewSchedule = async (data: NewDoctorSchedule) => {
     }
   }
 
-  const blog = await db
+  const [{ id }] = await db
     .insert(doctorSchedules)
     .values({
       ...data,
@@ -55,6 +55,11 @@ export const createNewSchedule = async (data: NewDoctorSchedule) => {
       createdAt: new Date(),
       updatedAt: new Date(),
     })
-    .returning();
-  return { ok: true, data: blog };
+    .$returningId();
+
+  const schedule = await db.query.doctorSchedules.findFirst({
+    where: eq(doctorSchedules.id, id),
+  });
+
+  return { ok: true, data: schedule ? [schedule] : [] };
 };

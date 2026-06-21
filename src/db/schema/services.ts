@@ -1,11 +1,11 @@
-import { jsonb, pgTable, serial, text, timestamp } from "drizzle-orm/pg-core";
+import { int, json, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
 
-export const services = pgTable("services", {
-  id: serial().primaryKey(),
-  title: text().notNull(),
-  sub_categories: jsonb("sub_categories").$type<string[]>().notNull(),
-  status: text().notNull().default("active"),
-  link: text().default("#"),
+export const services = mysqlTable("services", {
+  id: int().autoincrement().primaryKey(),
+  title: varchar({ length: 255 }).notNull(),
+  sub_categories: json("sub_categories").$type<string[]>().notNull(),
+  status: varchar({ length: 50 }).notNull().default("active"),
+  link: varchar({ length: 255 }).default("#"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });

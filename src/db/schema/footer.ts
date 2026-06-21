@@ -1,16 +1,15 @@
-import { pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core';
+import { int, mysqlTable, text, timestamp, varchar } from 'drizzle-orm/mysql-core';
 
-export const footer = pgTable('footer', {
-    id: serial().primaryKey(),
+export const footer = mysqlTable('footer', {
+    id: int().autoincrement().primaryKey(),
     address: text().default("Address"),
-    email: text().default("email"),
-    phone: text().default("phone"),
-    facebook: text().default("#"),
-    linkedin: text().default("#"),
-    instagram: text().default("#"),
+    email: varchar({ length: 255 }).default("email"),
+    phone: varchar({ length: 50 }).default("phone"),
+    facebook: varchar({ length: 255 }).default("#"),
+    linkedin: varchar({ length: 255 }).default("#"),
+    instagram: varchar({ length: 255 }).default("#"),
     createdAt: timestamp('created_at').defaultNow().notNull(),
     updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });
 export type Footer = typeof footer.$inferSelect;
 export type NewFooter = typeof footer.$inferInsert;
-

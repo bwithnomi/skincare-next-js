@@ -43,14 +43,19 @@ export const createNewService = async (data: NewService) => {
     });
     return { ok: false, errors: errorMessage };
   }
-  const blog = await db
+  const [{ id }] = await db
     .insert(services)
     .values({
       title: parsed.data.title,
       sub_categories: parsed.data.sub_categories,
     })
-    .returning();
-  return { ok: true, data: blog };
+    .$returningId();
+
+  const service = await db.query.services.findFirst({
+    where: eq(services.id, id),
+  });
+
+  return { ok: true, data: service ? [service] : [] };
 };
 
 export const deleteServiceById = async (id: number) => {

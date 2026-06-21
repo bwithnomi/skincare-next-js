@@ -52,7 +52,7 @@ export async function signUpAction(formData: FormDataLike) {
     const passwordHash = await hashPassword(parsed.data.password);
 
     // Insert user and return id
-    const inserted = await db
+    const [{ id }] = await db
       .insert(users)
       .values({
         email: parsed.data.email,
@@ -61,9 +61,9 @@ export async function signUpAction(formData: FormDataLike) {
         whatsapp: parsed.data.whatsapp,
         name: parsed.data.name,
       })
-      .returning({ id: users.id, email: users.email });
+      .$returningId();
 
-    const user = Array.isArray(inserted) ? inserted[0] : inserted;
+    const user = { id, email: parsed.data.email };
 
     // Create JWT payload (keep minimal)
     const token = await signJwt({ sub: String(user.id), email: user.email });

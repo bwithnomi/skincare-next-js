@@ -1,4 +1,4 @@
-import { jsonb, pgTable, serial, text, timestamp } from "drizzle-orm/pg-core";
+import { int, json, mysqlTable, timestamp } from "drizzle-orm/mysql-core";
 
 // TypeScript types for type safety
 export type BreakTime = {
@@ -24,9 +24,9 @@ export type WeeklySchedule = {
 };
 
 // Database schema
-export const doctorSchedules = pgTable("doctor_schedules", {
-  id: serial().primaryKey(),
-  weeklySchedule: jsonb("weekly_schedule").$type<WeeklySchedule>().notNull(),
+export const doctorSchedules = mysqlTable("doctor_schedules", {
+  id: int().autoincrement().primaryKey(),
+  weeklySchedule: json("weekly_schedule").$type<WeeklySchedule>().notNull(),
   effectiveFrom: timestamp("effective_from").notNull().defaultNow(),
   effectiveUntil: timestamp("effective_until"), // null means current schedule
   createdAt: timestamp("created_at").notNull().defaultNow(),
